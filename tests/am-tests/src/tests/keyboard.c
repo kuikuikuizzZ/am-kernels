@@ -1,4 +1,5 @@
 #include <amtest.h>
+#include <klib.h>
 
 #define NAMEINIT(key)  [ AM_KEY_##key ] = #key,
 static const char *names[] = {
