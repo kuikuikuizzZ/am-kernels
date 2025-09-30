@@ -1,21 +1,19 @@
 #include "trap.h"
 #include <klib.h>
 
-#define PSRAM_BASE 0x80000000
+#define PSRAM_BASE 0x80010000
 
 void temp_test(){
-    uint32_t offset = 6;
+    uint32_t offset = 1;
     *(volatile char *)(PSRAM_BASE + offset)= '0';
     offset = 1;
-	uint32_t s = *(volatile short *)(PSRAM_BASE + offset);
+	char s = *(volatile char *)(PSRAM_BASE + offset);
     // printf("%x\n",s);
-    check(s==0x16);
+    check(s=='a');
 }
 
-int main (){
-	
-
-    for(int i=0;i<16;i++){
+void psram_mem_test(){ 
+ for(int i=0;i<16;i++){
         *(volatile char *)(PSRAM_BASE + i)= '0'+i;
     }
     for(int i=0;i<16;i++){
@@ -38,5 +36,8 @@ int main (){
         printf("s: %x",s);
         check(s==('0'+i));
     }
+}
+int main (){
+	temp_test();
     return 0;
 }
