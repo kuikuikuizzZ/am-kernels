@@ -27,6 +27,12 @@ run: all
 	@cat $(RESULT)
 	@rm $(RESULT)
 
+sim-iverilog: all
+	@cat $(RESULT)
+	@rm $(RESULT)
+
+
+
 gdb: all
 
 clean:
