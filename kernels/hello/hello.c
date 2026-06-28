@@ -3,7 +3,7 @@
 
 int main(const char *args) {
   const char *fmt =
-    "Hello! here is abstract mechine";
+    "1234567890";
 
   for (const char *p = fmt; *p; p++) {
     (*p == '%') ? putstr(args) : putch(*p);

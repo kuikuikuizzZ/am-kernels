@@ -1,7 +1,7 @@
 #include "trap.h"
 #include <klib.h>
 
-#define FLASH_BASE 0x30000000
+#define FLASH_BASE 0x31000000
 void read_flash(void *addr, void* offset, int size){
     memcpy(addr, offset, size);
 }

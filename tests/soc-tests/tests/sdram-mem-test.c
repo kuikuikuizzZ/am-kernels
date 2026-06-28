@@ -49,6 +49,6 @@ void temp_test(){
 
 int main (){
 	temp_test();
-    // sdram_test();
+    sdram_test();
     return 0;
 }
